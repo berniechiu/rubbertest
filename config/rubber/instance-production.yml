@@ -1,0 +1,98 @@
+---
+- !ruby/object:Rubber::Configuration::InstanceItem
+  name: db01
+  domain: bernieEC2.com
+  roles:
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: db
+    options:
+      primary: true
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: postgresql
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: postgresql_master
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: collectd
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: monit
+    options: {}
+  instance_id: i-301dab4c
+  image_type: c1.medium
+  image_id: ami-b6089bdf
+  security_groups:
+  - rubbertest_production_default
+  external_host: ec2-54-209-143-13.compute-1.amazonaws.com
+  external_ip: 54.209.143.13
+  internal_host: ip-172-31-34-36.ec2.internal
+  internal_ip: 172.31.34.36
+  zone: us-east-1d
+  provider: aws
+  platform: linux
+  root_device_type: instance-store
+- !ruby/object:Rubber::Configuration::InstanceItem
+  name: app01
+  domain: bernieEC2.com
+  roles:
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: app
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: passenger
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: apache
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: collectd
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: monit
+    options: {}
+  instance_id: i-d6ec37aa
+  image_type: c1.medium
+  image_id: ami-b6089bdf
+  security_groups:
+  - rubbertest_production_default
+  external_host: ec2-54-208-115-91.compute-1.amazonaws.com
+  external_ip: 54.208.115.91
+  internal_host: ip-172-31-40-115.ec2.internal
+  internal_ip: 172.31.40.115
+  zone: us-east-1d
+  provider: aws
+  platform: linux
+  root_device_type: instance-store
+- !ruby/object:Rubber::Configuration::InstanceItem
+  name: web01
+  domain: bernieEC2.com
+  roles:
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: web
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: haproxy
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: collectd
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: monit
+    options: {}
+  instance_id: i-68e64d14
+  image_type: c1.medium
+  image_id: ami-b6089bdf
+  security_groups:
+  - rubbertest_production_default
+  - rubbertest_production_web
+  external_host: ec2-54-209-138-67.compute-1.amazonaws.com
+  external_ip: 54.209.138.67
+  internal_host: ip-172-31-37-120.ec2.internal
+  internal_ip: 172.31.37.120
+  zone: us-east-1d
+  provider: aws
+  platform: linux
+  root_device_type: instance-store
+- volumes: {}
+  static_ips: {}
