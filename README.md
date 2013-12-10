@@ -1,0 +1,1 @@
+A demo for deploying Rails app on Amazon EC2
